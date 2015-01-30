@@ -1,10 +1,88 @@
 ---
-title: Welcome to Middleman
+title: Sunlove
 ---
 
-<div class="welcome text-center">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<!-- Banner -->
+  <div id="banner">
+    <h1></h1>
+    <br>
+    <p>Turn your calendar into your everyday source of inspiration</p>
+    <p>Meet and surprise your friends more often!</p>
+    <br>
+    <%= link_to "GET YOUR SUNLOVE", "mailto:sophiakc@gmail.com", class: 'btn btn-medium' %>
+  </div>
+
+  <!-- Features -->
+  <div id="feature" class="text-center padded">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag "taste.svg", alt: "Your taste" %>
+          <h3>Give your tastes</h3>
+          <p>
+            Top 3 sources of inspiration for discovering new places and events (ex. ANousParis, le Bonbon...)
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag "calendar.svg", alt: "Calendar" %>
+          <h3>Auto-update of your calendar</h3>
+          <p>
+            Each events and new places from your tastes are then automatically incremented into your calendar.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag "map.svg", alt: "Map" %>
+          <h3>Your self-enriched map</h3>
+          <p>
+            And so forth with the map to localize events and places accordingly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to action -->
+  <div id="call-to-action" class="padded bg-yellow">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-xs-12 col-sm-12">
+          <h3>Get latest news from Sunlove</h3>
+          <p>
+            Leave your email below and get Sunlove news directly in your mailbox.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <form class="form-inline">
+            <input type="email" placeholder="coucou@gmail.com" class="form-control">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <input type="submit" value="Want to receive tips!" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(48.852937,2.364178);
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [] // TODO: replace [] by array from https://snazzymaps.com/
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
